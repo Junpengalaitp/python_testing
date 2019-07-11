@@ -1,0 +1,7 @@
+*.pyc
+.idea/*
+workspace.xml
+env
+settings.json
+.vscode
+utils/read_conf.py
