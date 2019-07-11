@@ -4,11 +4,11 @@ from datetime import datetime
 from database.mysqlmanager import SentimentDatabaseManager as DB
 
 
-class Daily12hTest(unittest.TestCase):
+class Daily6hTest(unittest.TestCase):
 
     def setUp(self) -> None:
-        query = "SELECT QUOTEID,SYMBOL, CONCAT(QUOTE_DATE,' ',QUOTIM) AS TIME FROM daily_10m ORDER BY TIME DESC LIMIT 7"
-        self.time_interval = 600
+        query = "SELECT QUOTEID,SYMBOL, CONCAT(QUOTE_DATE,' ',QUOTIM) AS TIME FROM daily_6h ORDER BY TIME DESC LIMIT 7"
+        self.time_interval = 6*3600
         self.recent_7_ticks = DB(1).get_data_from_db(query)
         self.tick_times = self.recent_7_ticks['TIME'].values.tolist()
 

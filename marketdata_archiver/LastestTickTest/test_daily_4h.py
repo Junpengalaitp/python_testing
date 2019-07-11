@@ -4,7 +4,7 @@ from datetime import datetime
 from database.mysqlmanager import SentimentDatabaseManager as DB
 
 
-class Daily12hTest(unittest.TestCase):
+class Daily4hTest(unittest.TestCase):
 
     def setUp(self) -> None:
         query = "SELECT QUOTEID,SYMBOL, CONCAT(QUOTE_DATE,' ',QUOTIM) AS TIME FROM daily_4h ORDER BY TIME DESC LIMIT 7"
